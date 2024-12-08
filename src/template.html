@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+  </head>
+  <body style="visibility: hidden">
+    <header>
+      <div>
+        <img
+          id="logo"
+          src="./assets/images/panda.svg"
+          alt="cute panda"
+          width="70px"
+          height="70px"
+        />
+        <h1>Task Panda</h1>
+      </div>
+      <nav>
+        <button type="button">Home</button>
+        <button type="button">About</button>
+        <button type="button">Contact</button>
+      </nav>
+    </header>
+    <section class="sidebar">
+      <h2>Projects</h2>
+      <div class="project-flex">
+        <!-- Project Checkbox -->
+        <form action="get" id="project-checkbox-template" style="display: none">
+          <input type="checkbox" id="" name="" checked />
+          <label for=""></label>
+        </form>
+        <!--  -->
+      </div>
+      <button type="button" class="action-button" id="add-project">
+        <img
+          src="./assets/images/plus.svg"
+          alt="plus sign"
+          width="20px"
+          height="20px"
+        />
+        <p>Add Project</p>
+      </button>
+      <h3>Sort Projects</h3>
+      <div class="sort-flex">
+        <form action="get">
+          <div>
+            <input
+              type="radio"
+              id="sort-priority"
+              name="project-sort"
+              value="project_priority"
+            />
+            <label for="sort-priority">Priority</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="sort-due-date"
+              name="project-sort"
+              value="project_due_date"
+            />
+            <label for="sort-due-date">Due Date</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="sort-hours"
+              name="project-sort"
+              value="project_hours"
+            />
+            <label for="sort-hours">Hours</label>
+          </div>
+        </form>
+      </div>
+    </section>
+    <main></main>
+    <footer>
+      <div>Created by Slab Inc</div>
+    </footer>
+    <!-- Modal elements -->
+    <div class="modal">
+      <form class="project" action="" method="get" name="project_form">
+        <div class="title-line">
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="text"
+              id="title"
+              name="project_title"
+              placeholder=" "
+              data-content="project_title"
+            />
+            <label class="floating-label" for="title">Title</label>
+          </div>
+          <div class="floating-content">
+            <input
+              id="priority"
+              class="floating-input"
+              type="number"
+              name="project_priority"
+              min="1"
+              max="3"
+            />
+            <label for="priority" class="floating-label">Priority</label>
+          </div>
+        </div>
+        <div class="date-flex">
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="date"
+              id="due-date"
+              name="project_due_date"
+              placeholder=" "
+              data-content="project_due_date"
+            />
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="number"
+              id="project-hours"
+              name="project_hours"
+              placeholder=" "
+              data-content="project_hours"
+            />
+            <label class="floating-label" for="project-hours">Est. Hours</label>
+          </div>
+        </div>
+        <div class="floating-content">
+          <textarea
+            class="floating-input"
+            name="project_description"
+            id="project-description"
+            placeholder=" "
+            rows="10"
+            data-content="project_description"
+          ></textarea>
+          <label class="floating-label" for="project-description"
+            >Description</label
+          >
+        </div>
+        <div class="task-flex"></div>
+        <button type="button" class="action-button">
+          <img
+            src="./assets/images/plus.svg"
+            alt="plus sign"
+            width="20px"
+            height="20px"
+          />
+          <p>Add Task</p>
+        </button>
+        <button type="submit" value="project_submit" class="action-button">
+          Save
+        </button>
+        <button type="button" class="close-modal">
+          <img src="./assets/images/cross.svg" alt="close edit box" />
+        </button>
+      </form>
+    </div>
+    <!-- Reusable task form -->
+    <div class="task-form" id="task-form-template" style="display: none">
+      <form class="task" action="" method="get" name="task_form">
+        <div class="title-line">
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="text"
+              id="title"
+              name="task_title"
+              placeholder=" "
+              data-content="task_title"
+            />
+            <label class="floating-label" for="title">Title</label>
+          </div>
+          <div class="floating-content">
+            <input
+              id="priority"
+              class="floating-input"
+              type="number"
+              name="task_priority"
+              min="1"
+              max="3"
+            />
+            <label for="priority" class="floating-label">Priority</label>
+          </div>
+        </div>
+        <div class="date-flex">
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="date"
+              id="due-date"
+              name="task_due_date"
+              placeholder=""
+              data-content="task_due_date"
+            />
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input
+              class="floating-input"
+              type="number"
+              id="project-hours"
+              name="task_hours"
+              placeholder=" "
+              data-content="task_hours"
+            />
+            <label class="floating-label" for="project-hours">Est. Hours</label>
+          </div>
+        </div>
+        <div class="floating-content">
+          <textarea
+            class="floating-input"
+            name="task_description"
+            id="project-description"
+            placeholder=" "
+            rows="10"
+            data-content="task_description"
+          ></textarea>
+          <label class="floating-label" for="project-description"
+            >Description</label
+          >
+        </div>
+        <button type="submit" value="project_submit" class="action-button">
+          Save
+        </button>
+        <button type="button" class="close-modal">
+          <img src="./assets/images/cross.svg" alt="close edit box" />
+        </button>
+      </form>
+    </div>
+    <!-- Reusable Project Node -->
+    <div class="project-container" id="project-template" style="display: none">
+      <div>
+        <button type="button" class="edit-button">
+          <img
+            src="./assets/images/ellipsis.svg"
+            alt="edit project"
+            width="20px"
+            height="20px"
+          />
+        </button>
+        <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="./assets/images/cross.svg" alt="close edit box" />
+          </button>
+          <ul>
+            <li>Sort By</li>
+            <ul>
+              <button type="button" name="task-sort" value="task_priority">
+                <li>Priority</li>
+              </button>
+              <button type="button" name="task-sort" value="task_due_date">
+                <li>Date</li>
+              </button>
+              <button type="button" name="task-sort" value="task_hours">
+                <li>Hours</li>
+              </button>
+            </ul>
+            <li>Actions</li>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="project">
+          <div class="title-line">
+            <h2 data-content="project_title"></h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p>
+              <strong>Due: </strong
+              ><span data-content="project_due_date"></span>
+            </p>
+            <p>
+              <strong>Est. Hours: </strong
+              ><span data-content="project_hours"></span>
+            </p>
+          </div>
+          <p data-content="project_description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta
+            velit felis, vitae consectetur arcu malesuada eget. Donec semper
+            odio sit amet mi egestas ullamcorper nec ut arcu.
+          </p>
+          <div class="task-flex"></div>
+          <button type="button" class="action-button">
+            <img
+              src="./assets/images/plus.svg"
+              alt="plus sign"
+              width="20px"
+              height="20px"
+            />
+            <p>Add Task</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reusable Task Node -->
+    <div class="task-container" id="task-template" style="display: none">
+      <button type="button" class="edit-button">
+        <img
+          src="./assets/images/ellipsis.svg"
+          alt="edit project"
+          width="20px"
+          height="20px"
+        />
+      </button>
+      <!-- Element Popup -->
+      <div class="popup">
+        <button type="button" class="close-modal">
+          <img src="./assets/images/cross.svg" alt="close edit box" />
+        </button>
+        <ul>
+          <button type="button" name="edit">
+            <li>Edit</li>
+          </button>
+          <button type="button" name="delete">
+            <li>Delete</li>
+          </button>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="task">
+        <div class="title-line">
+          <h2 data-content="task_title">Create UI</h2>
+          <div class="triangle"></div>
+        </div>
+        <div>
+          <p>
+            <strong>Due: </strong><span data-content="task_due_date"></span>
+          </p>
+          <p>
+            <strong>Est. Hours: </strong><span data-content="task_hours"></span>
+          </p>
+        </div>
+        <input type="checkbox" id="" class="collapsible" data-index="0" />
+        <label for="" class="collapsible"></label>
+        <p data-content="task_description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta
+          velit felis, vitae consectetur arcu malesuada eget. Donec semper odio
+          sit amet mi egestas ullamcorper nec ut arcu. Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit. Sed porta velit felis, vitae
+          consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas
+          ullamcorper nec ut arcu.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

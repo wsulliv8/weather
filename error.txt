@@ -1,0 +1,846 @@
+
+> tasks@1.0.0 build
+> webpack --config webpack.prod.js
+
+assets by status 52.7 KiB [cached] 7 assets
+orphan modules 534 KiB [orphan] 308 modules
+runtime modules 2.3 KiB 7 modules
+cacheable modules 45.9 KiB (javascript) 487 bytes (asset)
+  modules by path ./node_modules/ 9.17 KiB
+    modules by path ./node_modules/style-loader/dist/runtime/*.js 5.84 KiB
+      ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js 2.42 KiB [built] [code generated]
+      + 5 modules
+    modules by path ./node_modules/css-loader/dist/runtime/*.js 3.33 KiB
+      ./node_modules/css-loader/dist/runtime/sourceMaps.js 505 bytes [built] [code generated]
+      ./node_modules/css-loader/dist/runtime/api.js 2.25 KiB [built] [code generated]
+      ./node_modules/css-loader/dist/runtime/getUrl.js 597 bytes [built] [code generated]
+  modules by path ./src/ 36.7 KiB (javascript) 487 bytes (asset)
+    ./src/index.js + 4 modules 14.3 KiB [built] [code generated]
+    ./node_modules/css-loader/dist/cjs.js!./src/styles/style.css 22.3 KiB [built] [code generated]
+    ./src/assets/images/triangle.svg 487 bytes (asset) 42 bytes (javascript) [built] [code generated]
+  assets by status 4.96 KiB [cached] 4 assets
+  Entrypoint HtmlWebpackPlugin_0-/home/will/repos/tasks/node_modules/html-webpack-plugin/lib/loader.js!/home/will/repos/tasks/src/template.html = 4 auxiliary assets
+  runtime modules 1.52 KiB 6 modules
+  cacheable modules 4.96 KiB (asset) 9.72 KiB (javascript)
+    asset modules 4.96 KiB (asset) 168 bytes (javascript)
+      ./src/assets/images/panda.svg 3.43 KiB (asset) 42 bytes (javascript) [built] [code generated]
+      ./src/assets/images/plus.svg 340 bytes (asset) 42 bytes (javascript) [built] [code generated]
+      ./src/assets/images/cross.svg 783 bytes (asset) 42 bytes (javascript) [built] [code generated]
+      ./src/assets/images/ellipsis.svg 441 bytes (asset) 42 bytes (javascript) [built] [code generated]
+    javascript modules 9.55 KiB
+      data:text/javascript,__webpack_public.. 77 bytes [built] [code generated]
+      ./node_modules/html-webpack-plugin/lib/loader.js!./src/template.html 9.48 KiB [built] [code generated] [1 error]
+    
+
+  ERROR in ./src/template.html (./node_modules/html-webpack-plugin/lib/loader.js!./src/template.html)
+  Module Error (from ./node_modules/html-loader/dist/cjs.js):
+  Parse Error: <input class="floating-input" type="date" id="due-date" name="task_due_date" placeholder="  data-content="task_due_date">
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input class="floating-input" type="number" id="project-hours" name="task_hours" placeholder=" " data-content="task_hours">
+            <label class="floating-label" for="project-hours">Est. Hours</label>
+          </div>
+        </div>
+        <div class="floating-content">
+          <textarea class="floating-input" name="task_description" id="project-description" placeholder=" " rows="10" data-content="task_description"></textarea>
+          <label class="floating-label" for="project-description">Description</label>
+        </div>
+        <button type="submit" value='project_submit' class="action-button">Save</button>
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+      </form>
+     </div>
+     <!-- Reusable Project Node -->
+     <div class="project-container" id="project-template" style="display: none;">
+      <div>
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20px" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <li>Sort By</li>
+            <ul>
+              <button type="button" name="task-sort" value="task_priority">
+                <li>Priority</li>
+              </button>
+              <button type="button" name="task-sort" value="task_due_date">
+                <li>Date</li>
+              </button>
+              <button type="button" name="task-sort" value="task_hours">
+                <li>Hours</li>
+              </button>
+            </ul>
+            <li>Actions</li>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="project">
+          <div class="title-line">
+            <h2 data-content="project_title"></h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="project_due_date"></span></p>
+            <p><strong>Est. Hours: </strong><span data-content="project_hours"></span></p>
+          </div>
+          <p data-content="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu. </p>
+          <div class="task-flex">
+          </div>
+          <button type="button" class="action-button">
+            <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="20px" height="20px">
+            <p>Add Task</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reusable Task Node -->
+    <div class="task-container" id="task-template" style="display: none;">
+      <button type="button" class="edit-button">
+        <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20px" height="20px">
+      </button> 
+        <!-- Element Popup -->
+      <div class="popup">
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+        <ul>
+          <button type="button" name="edit">
+            <li>Edit</li>
+          </button>
+          <button type="button" name="delete">
+            <li>Delete</li>
+          </button>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="task">
+        <div class="title-line">
+          <h2 data-content="task_title">Create UI</h2>
+          <div class="triangle"></div>
+        </div>
+        <div>
+          <p><strong>Due: </strong><span data-content="task_due_date"></span></p>
+          <p><strong>Est. Hours: </strong><span data-content="task_hours"></span></p>
+        </div>
+        <input type="checkbox" id="" class="collapsible" data-index="0">
+        <label for="" class="collapsible"></label>
+        <p data-content="task_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+        </p>
+    </div>
+  </div>
+  </body>
+  </html>
+  Error: Parse Error: <input class="floating-input" type="date" id="due-date" name="task_due_date" placeholder="  data-content="task_due_date">
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input class="floating-input" type="number" id="project-hours" name="task_hours" placeholder=" " data-content="task_hours">
+            <label class="floating-label" for="project-hours">Est. Hours</label>
+          </div>
+        </div>
+        <div class="floating-content">
+          <textarea class="floating-input" name="task_description" id="project-description" placeholder=" " rows="10" data-content="task_description"></textarea>
+          <label class="floating-label" for="project-description">Description</label>
+        </div>
+        <button type="submit" value='project_submit' class="action-button">Save</button>
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+      </form>
+     </div>
+     <!-- Reusable Project Node -->
+     <div class="project-container" id="project-template" style="display: none;">
+      <div>
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20px" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <li>Sort By</li>
+            <ul>
+              <button type="button" name="task-sort" value="task_priority">
+                <li>Priority</li>
+              </button>
+              <button type="button" name="task-sort" value="task_due_date">
+                <li>Date</li>
+              </button>
+              <button type="button" name="task-sort" value="task_hours">
+                <li>Hours</li>
+              </button>
+            </ul>
+            <li>Actions</li>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="project">
+          <div class="title-line">
+            <h2 data-content="project_title"></h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="project_due_date"></span></p>
+            <p><strong>Est. Hours: </strong><span data-content="project_hours"></span></p>
+          </div>
+          <p data-content="project_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu. </p>
+          <div class="task-flex">
+          </div>
+          <button type="button" class="action-button">
+            <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="20px" height="20px">
+            <p>Add Task</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reusable Task Node -->
+    <div class="task-container" id="task-template" style="display: none;">
+      <button type="button" class="edit-button">
+        <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20px" height="20px">
+      </button> 
+        <!-- Element Popup -->
+      <div class="popup">
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+        <ul>
+          <button type="button" name="edit">
+            <li>Edit</li>
+          </button>
+          <button type="button" name="delete">
+            <li>Delete</li>
+          </button>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="task">
+        <div class="title-line">
+          <h2 data-content="task_title">Create UI</h2>
+          <div class="triangle"></div>
+        </div>
+        <div>
+          <p><strong>Due: </strong><span data-content="task_due_date"></span></p>
+          <p><strong>Est. Hours: </strong><span data-content="task_hours"></span></p>
+        </div>
+        <input type="checkbox" id="" class="collapsible" data-index="0">
+        <label for="" class="collapsible"></label>
+        <p data-content="task_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+        </p>
+    </div>
+  </div>
+  </body>
+  </html>
+      at HTMLParser.parse (/home/will/repos/tasks/node_modules/html-loader/node_modules/html-minifier-terser/dist/htmlminifier.cjs:245:15)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async minifyHTML (/home/will/repos/tasks/node_modules/html-loader/node_modules/html-minifier-terser/dist/htmlminifier.cjs:1764:3)
+      at async minify (/home/will/repos/tasks/node_modules/html-loader/node_modules/html-minifier-terser/dist/htmlminifier.cjs:1849:18)
+      at async process (/home/will/repos/tasks/node_modules/html-loader/dist/plugins/minimizer-plugin.js:11:12)
+      at async Object.process (/home/will/repos/tasks/node_modules/html-loader/dist/utils.js:847:19)
+      at async Object.loader (/home/will/repos/tasks/node_modules/html-loader/dist/index.js:54:7)
+
+  Child HtmlWebpackCompiler compiled with 1 error
+
+ERROR in Error: Child compilation failed:
+  Module Error (from ./node_modules/html-loader/dist/cjs.js):
+  Parse Error: <input class="floating-input" type="date" id="due-date" name="tas  k_due_date" placeholder="  data-content="task_due_date">
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input class="floating-input" type="number" id="project-hours" name=  "task_hours" placeholder=" " data-content="task_hours">
+            <label class="floating-label" for="project-hours">Est. Hours</label>          </div>
+        </div>
+        <div class="floating-content">
+          <textarea class="floating-input" name="task_description" id="project-d  escription" placeholder=" " rows="10" data-content="task_description"></textar  ea>
+          <label class="floating-label" for="project-description">Description</l  abel>
+        </div>
+        <button type="submit" value='project_submit' class="action-button">Save<  /button>
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+      </form>
+     </div>
+     <!-- Reusable Project Node -->
+     <div class="project-container" id="project-template" style="display: none;"  >
+      <div>
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="2  0px" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <li>Sort By</li>
+            <ul>
+              <button type="button" name="task-sort" value="task_priority">
+                <li>Priority</li>
+              </button>
+              <button type="button" name="task-sort" value="task_due_date">
+                <li>Date</li>
+              </button>
+              <button type="button" name="task-sort" value="task_hours">
+                <li>Hours</li>
+              </button>
+            </ul>
+            <li>Actions</li>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="project">
+          <div class="title-line">
+            <h2 data-content="project_title"></h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="project_due_date"></spa  n></p>
+            <p><strong>Est. Hours: </strong><span data-content="project_hours"><  /span></p>
+          </div>
+          <p data-content="project_description">Lorem ipsum dolor sit amet, cons  ectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesua  da eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu. </p>
+          <div class="task-flex">
+          </div>
+          <button type="button" class="action-button">
+            <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="20  px" height="20px">
+            <p>Add Task</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reusable Task Node -->
+    <div class="task-container" id="task-template" style="display: none;">
+      <button type="button" class="edit-button">
+        <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20p  x" height="20px">
+      </button> 
+        <!-- Element Popup -->
+      <div class="popup">
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+        <ul>
+          <button type="button" name="edit">
+            <li>Edit</li>
+          </button>
+          <button type="button" name="delete">
+            <li>Delete</li>
+          </button>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="task">
+        <div class="title-line">
+          <h2 data-content="task_title">Create UI</h2>
+          <div class="triangle"></div>
+        </div>
+        <div>
+          <p><strong>Due: </strong><span data-content="task_due_date"></span></p  >
+          <p><strong>Est. Hours: </strong><span data-content="task_hours"></span  ></p>
+        </div>
+        <input type="checkbox" id="" class="collapsible" data-index="0">
+        <label for="" class="collapsible"></label>
+        <p data-content="task_description">Lorem ipsum dolor sit amet, consectet  ur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eg  et. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta vel  it felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi   egestas ullamcorper nec ut arcu.
+        </p>
+    </div>
+  </div>
+  </body>
+  </html>
+  ModuleError: Module Error (from ./node_modules/html-loader/dist/cjs.js):
+  Parse Error: <input class="floating-input" type="date" id="due-date" name="tas  k_due_date" placeholder="  data-content="task_due_date">
+            <label class="floating-label" for="due-date">Due Date</label>
+          </div>
+          <div class="floating-content">
+            <input class="floating-input" type="number" id="project-hours" name=  "task_hours" placeholder=" " data-content="task_hours">
+            <label class="floating-label" for="project-hours">Est. Hours</label>          </div>
+        </div>
+        <div class="floating-content">
+          <textarea class="floating-input" name="task_description" id="project-d  escription" placeholder=" " rows="10" data-content="task_description"></textar  ea>
+          <label class="floating-label" for="project-description">Description</l  abel>
+        </div>
+        <button type="submit" value='project_submit' class="action-button">Save<  /button>
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+      </form>
+     </div>
+     <!-- Reusable Project Node -->
+     <div class="project-container" id="project-template" style="display: none;"  >
+      <div>
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="2  0px" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <li>Sort By</li>
+            <ul>
+              <button type="button" name="task-sort" value="task_priority">
+                <li>Priority</li>
+              </button>
+              <button type="button" name="task-sort" value="task_due_date">
+                <li>Date</li>
+              </button>
+              <button type="button" name="task-sort" value="task_hours">
+                <li>Hours</li>
+              </button>
+            </ul>
+            <li>Actions</li>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="project">
+          <div class="title-line">
+            <h2 data-content="project_title"></h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="project_due_date"></spa  n></p>
+            <p><strong>Est. Hours: </strong><span data-content="project_hours"><  /span></p>
+          </div>
+          <p data-content="project_description">Lorem ipsum dolor sit amet, cons  ectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesua  da eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu. </p>
+          <div class="task-flex">
+          </div>
+          <button type="button" class="action-button">
+            <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="20  px" height="20px">
+            <p>Add Task</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Reusable Task Node -->
+    <div class="task-container" id="task-template" style="display: none;">
+      <button type="button" class="edit-button">
+        <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="20p  x" height="20px">
+      </button> 
+        <!-- Element Popup -->
+      <div class="popup">
+        <button type="button" class="close-modal">
+          <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+        </button>
+        <ul>
+          <button type="button" name="edit">
+            <li>Edit</li>
+          </button>
+          <button type="button" name="delete">
+            <li>Delete</li>
+          </button>
+        </ul>
+      </div>
+      <!--  -->
+      <div class="task">
+        <div class="title-line">
+          <h2 data-content="task_title">Create UI</h2>
+          <div class="triangle"></div>
+        </div>
+        <div>
+          <p><strong>Due: </strong><span data-content="task_due_date"></span></p  >
+          <p><strong>Est. Hours: </strong><span data-content="task_hours"></span  ></p>
+        </div>
+        <input type="checkbox" id="" class="collapsible" data-index="0">
+        <label for="" class="collapsible"></label>
+        <p data-content="task_description">Lorem ipsum dolor sit amet, consectet  ur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuada eg  et. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta vel  it felis, vitae consectetur arcu malesuada eget. Donec semper odio sit amet mi   egestas ullamcorper nec ut arcu.
+        </p>
+    </div>
+  </div>
+  </body>
+  </html>
+      at Object.emitError (/home/will/repos/tasks/node_modules/webpack/lib/Norma  lModule.js:707:6)
+      at Object.loader (/home/will/repos/tasks/node_modules/html-loader/dist/ind  ex.js:56:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95  :5)
+  
+  - NormalModule.js:707 Object.emitError
+    [tasks]/[webpack]/lib/NormalModule.js:707:6
+  
+  - index.js:56 Object.loader
+    [tasks]/[html-loader]/dist/index.js:56:10
+  
+  - task_queues:95 process.processTicksAndRejections
+    node:internal/process/task_queues:95:5
+  
+  - child-compiler.js:211 
+    [tasks]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - Compiler.js:629 finalCallback
+    [tasks]/[webpack]/lib/Compiler.js:629:5
+  
+  - Compiler.js:664 
+    [tasks]/[webpack]/lib/Compiler.js:664:11
+  
+  - Compiler.js:1350 
+    [tasks]/[webpack]/lib/Compiler.js:1350:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [tasks]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1346 
+    [tasks]/[webpack]/lib/Compiler.js:1346:33
+  
+  - Compilation.js:2938 finalCallback
+    [tasks]/[webpack]/lib/Compilation.js:2938:11
+  
+  - Compilation.js:3251 
+    [tasks]/[webpack]/lib/Compilation.js:3251:11
+
+ERROR in Error: Parse Error: <input class="floating-input" type="date" id="due-date" na  me="tas  k_due_date" placeholder="  data-content="task_due_date">
+              <label class="floating-label" for="due-date">Due Date</label>
+            </div>
+            <div class="floating-content">
+              <input class="floating-input" type="number" id="project-hours" nam  e=  "task_hours" placeholder=" " data-content="task_hours">
+              <label class="floating-label" for="project-hours">Est. Hours</labe  l>          </div>
+          </div>
+          <div class="floating-content">
+            <textarea class="floating-input" name="task_description" id="project  -d  escription" placeholder=" " rows="10" data-content="task_description"></te  xtar  ea>
+            <label class="floating-label" for="project-description">Description<  /l  abel>
+          </div>
+          <button type="submit" value='project_submit' class="action-button">Sav  e<  /button>
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+        </form>
+       </div>
+       <!-- Reusable Project Node -->
+       <div class="project-container" id="project-template" style="display: none  ;"  >
+        <div>
+          <button type="button" class="edit-button">
+            <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width=  "2  0px" height="20px">
+          </button> 
+            <!-- Element Popup -->
+          <div class="popup">
+            <button type="button" class="close-modal">
+              <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+            </button>
+            <ul>
+              <li>Sort By</li>
+              <ul>
+                <button type="button" name="task-sort" value="task_priority">
+                  <li>Priority</li>
+                </button>
+                <button type="button" name="task-sort" value="task_due_date">
+                  <li>Date</li>
+                </button>
+                <button type="button" name="task-sort" value="task_hours">
+                  <li>Hours</li>
+                </button>
+              </ul>
+              <li>Actions</li>
+              <button type="button" name="edit">
+                <li>Edit</li>
+              </button>
+              <button type="button" name="delete">
+                <li>Delete</li>
+              </button>
+            </ul>
+          </div>
+          <!--  -->
+          <div class="project">
+            <div class="title-line">
+              <h2 data-content="project_title"></h2>
+              <div class="triangle"></div>
+            </div>
+            <div>
+              <p><strong>Due: </strong><span data-content="project_due_date"></s  pa  n></p>
+              <p><strong>Est. Hours: </strong><span data-content="project_hours"  ><  /span></p>
+            </div>
+            <p data-content="project_description">Lorem ipsum dolor sit amet, co  ns  ectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu mal  esua  da eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.   </p>
+            <div class="task-flex">
+            </div>
+            <button type="button" class="action-button">
+              <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="  20  px" height="20px">
+              <p>Add Task</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Reusable Task Node -->
+      <div class="task-container" id="task-template" style="display: none;">
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="2  0p  x" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="task">
+          <div class="title-line">
+            <h2 data-content="task_title">Create UI</h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="task_due_date"></span><  /p  >
+            <p><strong>Est. Hours: </strong><span data-content="task_hours"></sp  an  ></p>
+          </div>
+          <input type="checkbox" id="" class="collapsible" data-index="0">
+          <label for="" class="collapsible"></label>
+          <p data-content="task_description">Lorem ipsum dolor sit amet, consect  et  ur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuad  a eg  et. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta v  el  it felis, vitae consectetur arcu malesuada eget. Donec semper odio sit ame  t mi   egestas ullamcorper nec ut arcu.
+          </p>
+      </div>
+    </div>
+    </body>
+    </html>
+    ModuleError: Module Error (from ./node_modules/html-loader/dist/cjs.js):
+    Parse Error: <input class="floating-input" type="date" id="due-date" name="t  as  k_due_date" placeholder="  data-content="task_due_date">
+              <label class="floating-label" for="due-date">Due Date</label>
+            </div>
+            <div class="floating-content">
+              <input class="floating-input" type="number" id="project-hours" nam  e=  "task_hours" placeholder=" " data-content="task_hours">
+              <label class="floating-label" for="project-hours">Est. Hours</labe  l>          </div>
+          </div>
+          <div class="floating-content">
+            <textarea class="floating-input" name="task_description" id="project  -d  escription" placeholder=" " rows="10" data-content="task_description"></te  xtar  ea>
+            <label class="floating-label" for="project-description">Description<  /l  abel>
+          </div>
+          <button type="submit" value='project_submit' class="action-button">Sav  e<  /button>
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+        </form>
+       </div>
+       <!-- Reusable Project Node -->
+       <div class="project-container" id="project-template" style="display: none  ;"  >
+        <div>
+          <button type="button" class="edit-button">
+            <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width=  "2  0px" height="20px">
+          </button> 
+            <!-- Element Popup -->
+          <div class="popup">
+            <button type="button" class="close-modal">
+              <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+            </button>
+            <ul>
+              <li>Sort By</li>
+              <ul>
+                <button type="button" name="task-sort" value="task_priority">
+                  <li>Priority</li>
+                </button>
+                <button type="button" name="task-sort" value="task_due_date">
+                  <li>Date</li>
+                </button>
+                <button type="button" name="task-sort" value="task_hours">
+                  <li>Hours</li>
+                </button>
+              </ul>
+              <li>Actions</li>
+              <button type="button" name="edit">
+                <li>Edit</li>
+              </button>
+              <button type="button" name="delete">
+                <li>Delete</li>
+              </button>
+            </ul>
+          </div>
+          <!--  -->
+          <div class="project">
+            <div class="title-line">
+              <h2 data-content="project_title"></h2>
+              <div class="triangle"></div>
+            </div>
+            <div>
+              <p><strong>Due: </strong><span data-content="project_due_date"></s  pa  n></p>
+              <p><strong>Est. Hours: </strong><span data-content="project_hours"  ><  /span></p>
+            </div>
+            <p data-content="project_description">Lorem ipsum dolor sit amet, co  ns  ectetur adipiscing elit. Sed porta velit felis, vitae consectetur arcu mal  esua  da eget. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.   </p>
+            <div class="task-flex">
+            </div>
+            <button type="button" class="action-button">
+              <img src="___HTML_LOADER_REPLACEMENT_1___" alt="plus sign" width="  20  px" height="20px">
+              <p>Add Task</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Reusable Task Node -->
+      <div class="task-container" id="task-template" style="display: none;">
+        <button type="button" class="edit-button">
+          <img src="___HTML_LOADER_REPLACEMENT_3___" alt="edit project" width="2  0p  x" height="20px">
+        </button> 
+          <!-- Element Popup -->
+        <div class="popup">
+          <button type="button" class="close-modal">
+            <img src="___HTML_LOADER_REPLACEMENT_2___" alt="close edit box">
+          </button>
+          <ul>
+            <button type="button" name="edit">
+              <li>Edit</li>
+            </button>
+            <button type="button" name="delete">
+              <li>Delete</li>
+            </button>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="task">
+          <div class="title-line">
+            <h2 data-content="task_title">Create UI</h2>
+            <div class="triangle"></div>
+          </div>
+          <div>
+            <p><strong>Due: </strong><span data-content="task_due_date"></span><  /p  >
+            <p><strong>Est. Hours: </strong><span data-content="task_hours"></sp  an  ></p>
+          </div>
+          <input type="checkbox" id="" class="collapsible" data-index="0">
+          <label for="" class="collapsible"></label>
+          <p data-content="task_description">Lorem ipsum dolor sit amet, consect  et  ur adipiscing elit. Sed porta velit felis, vitae consectetur arcu malesuad  a eg  et. Donec semper odio sit amet mi egestas ullamcorper nec ut arcu.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta v  el  it felis, vitae consectetur arcu malesuada eget. Donec semper odio sit ame  t mi   egestas ullamcorper nec ut arcu.
+          </p>
+      </div>
+    </div>
+    </body>
+    </html>
+        at Object.emitError (/home/will/repos/tasks/node_modules/webpack/lib/Nor  ma  lModule.js:707:6)
+        at Object.loader (/home/will/repos/tasks/node_modules/html-loader/dist/i  nd  ex.js:56:10)
+        at process.processTicksAndRejections (node:internal/process/task_queues:  95  :5)
+    
+    - NormalModule.js:707 Object.emitError
+      [tasks]/[webpack]/lib/NormalModule.js:707:6
+    
+    - index.js:56 Object.loader
+      [tasks]/[html-loader]/dist/index.js:56:10
+    
+    - task_queues:95 process.processTicksAndRejections
+      node:internal/process/task_queues:95:5
+    
+    - child-compiler.js:211 
+      [tasks]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+    
+    - Compiler.js:629 finalCallback
+      [tasks]/[webpack]/lib/Compiler.js:629:5
+    
+    - Compiler.js:664 
+      [tasks]/[webpack]/lib/Compiler.js:664:11
+    
+    - Compiler.js:1350 
+      [tasks]/[webpack]/lib/Compiler.js:1350:17
+    
+    
+    - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+      [tasks]/[tapable]/lib/Hook.js:18:14
+    
+    - Compiler.js:1346 
+      [tasks]/[webpack]/lib/Compiler.js:1346:33
+    
+    - Compilation.js:2938 finalCallback
+      [tasks]/[webpack]/lib/Compilation.js:2938:11
+    
+    - Compilation.js:3251 
+      [tasks]/[webpack]/lib/Compilation.js:3251:11
+    
+    
+  </pre>
+  
+  - Norma  lModule.js:707 Object.emitError
+    [tasks]/[webpack]/lib/Norma  lModule.js:707:6
+  
+  - ind  ex.js:56 Object.loader
+    [tasks]/[html-loader]/dist/ind  ex.js:56:10
+  
+  - process.processTicksAndRejections
+  
+  - - NormalModule.js:707 Object.emitError
+  
+  - [tasks]/[webpack]/lib/NormalModule.js:707:6
+  
+  - - index.js:56 Object.loader
+  
+  - [tasks]/[html-loader]/dist/index.js:56:10
+  
+  - - task_queues:95 process.processTicksAndRejections
+  
+  - node:internal/process/task_queues:95:5
+  
+  - - child-compiler.js:211
+  
+  - [tasks]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - - Compiler.js:629 finalCallback
+  
+  - [tasks]/[webpack]/lib/Compiler.js:629:5
+  
+  - - Compiler.js:664
+  
+  - [tasks]/[webpack]/lib/Compiler.js:664:11
+  
+  - - Compiler.js:1350
+  
+  - [tasks]/[webpack]/lib/Compiler.js:1350:17
+  
+  - - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+  
+  - [tasks]/[tapable]/lib/Hook.js:18:14
+  
+  - - Compiler.js:1346
+  
+  - [tasks]/[webpack]/lib/Compiler.js:1346:33
+  
+  - - Compilation.js:2938 finalCallback
+  
+  - [tasks]/[webpack]/lib/Compilation.js:2938:11
+  
+  - - Compilation.js:3251
+  
+  - [tasks]/[webpack]/lib/Compilation.js:3251:11
+  
+  - </pre>
+  
+  - htmlparser.js:255 HTMLParser.parse
+    [tasks]/[html-minifier-terser]/src/htmlparser.js:255:15
+  
+  - task_queues:95 process.processTicksAndRejections
+    node:internal/process/task_queues:95:5
+  
+  - htmlminifier.js:1282 async minify
+    [tasks]/[html-minifier-terser]/src/htmlminifier.js:1282:3
+  
+  - htmlminifier.js:1365 async exports.minify
+    [tasks]/[html-minifier-terser]/src/htmlminifier.js:1365:16
+
+webpack 5.96.1 compiled with 3 errors in 1164 ms
