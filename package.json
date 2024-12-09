@@ -17,7 +17,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "browserslist": [
-    "default"
+    "defaults"
   ],
   "devDependencies": {
     "@babel/cli": "^7.26.4",
